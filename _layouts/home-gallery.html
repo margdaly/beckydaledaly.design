@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+{% assign image_files = site.static_files | where: "image", true | where_exp: "file", "file.path contains '/gallery/'" %}
+{% assign sorted_images = image_files | sort: "name" %}
+
+<div class="page-layout">
+  <div class="gallery-wrapper">
+    <div class="gallery">
+      {% for image in sorted_images %}
+        <figure class="gallery-item">
+          <img src="{{ image.path | relative_url }}" alt="{{ image.basename }}" class="gallery-image">
+          <figcaption>{{ image.basename | replace: '-', ' ' | replace: '_', ' ' | capitalize }}</figcaption>
+        </figure>
+      {% endfor %}
+    </div>
+    <div class="author-info">
+      {% include about.html %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .page-layout {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .gallery-wrapper {
+    flex-grow: 1;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  .gallery-item {
+    margin: 0;
+  }
+  .gallery-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  figcaption {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+  }
+
+  @media (max-width: 768px) {
+    .page-layout {
+      flex-direction: column;
+    }
+
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gallery {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
