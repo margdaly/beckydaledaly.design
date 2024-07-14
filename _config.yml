@@ -21,6 +21,7 @@
 skin: "/assets/css/skins/default.css"
 locale: en-US
 logo: "/assets/images/logo.png"
+favicon: "/assets/images/favicon.ico"
 title: Becky Dale Daly Design
 email: beckydaledesign@gmail.com
 description: Design | Project Managment | Construction
@@ -45,22 +46,41 @@ defaults:
       path: "_projects"
       type: projects
     values:
-      layout: post
-      share: true
+      layout: project
+      # share: true
+      image_file: true
+      # output: true
+
+  # images defaults
+  - scope:
+      path: "assets/images/gallery"
+    values:
+      image: true
+
+# Collections
+collections: 
+  projects:
+    output: true
+
 
 # Site Author
 author:
-  name:
-  picture:
-  email:
-  instagram:
-    icon: fab fa-instagram
-  facebook:
-    icon: fab fa-facebook
+  name: Becky Dale Daly
+  avatar: "/assets/images/bio-photo-mini.png"
+  email: "beckydaledesign@gmail.com"
+  location: "Los Angeles, CA"
   links:
-    - title:
-      url:
-      icon:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:beckydaledesign@gmail.com"
+    - label: "Instagram"
+      icon: "fab fa-instagram"
+      url: "https://www.instagram.com/beckydaledaly/"
+    - label: "Facebook"
+      icon: "fab fa-facebook"
+      url: "https://www.facebook.com/beckydaledaly/"
+    - label: "Website"
+      icon: "/assets/images/favicon.ico"
 
 
 

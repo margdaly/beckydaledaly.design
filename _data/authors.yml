@@ -1,0 +1,11 @@
+Becky Dale Daly:
+  name: Becky Dale Daly
+  picture: /assets/images/bio-photo-mini.png
+  instagram: "@beckydaledalydesign"
+  links:
+    - title: Instagram
+      url: https://instagram.com/beckydaledalydesign"
+      icon: fab fa-instagram-square
+    - title: Facebook
+      url: https://facebook.com/beckydaledalydesign"
+      icon: fab fa-facebook-square
