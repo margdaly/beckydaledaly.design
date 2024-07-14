@@ -1,19 +1,21 @@
 ---
-layout: page
+layout: about
 title: About
 permalink: /about/
-share: true
+# share: true
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+## A Southern Girl in the LA World
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+15 years experience in interior and exterior design<br>
+Specializing in remodels and new construction<br>
+Expert in project coordination and management<br>
+Dedicated to building strong client relationships and understanding unique needs<br><br>
+*Known for:*<br>
+- Superior customer service
+- Effective communication
+- Meticulous attention to detail
+<br> 
+<br>
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+## ***Bringing Happiness, Joy, and Beauty to You!***

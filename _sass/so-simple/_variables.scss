@@ -41,10 +41,13 @@ $h6-max: ($base-font-size / $modular-scale-2) !default;
 /* Title */
 $title-min: $h1-min * 1.8; 
 $title-max: $h1-max * 1.8; 
+
 /* Description */
 $description-min: $h4-min * 1.2; 
 $description-max: $h4-max * 1.2; 
 
+$about-name-min: $h2-min * 2;
+$about-name-max: $h2-min * 2;
 
 /* Font Families */
 $serif-font-family: "Lora", serif !default;
