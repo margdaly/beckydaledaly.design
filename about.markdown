@@ -3,6 +3,7 @@ layout: about
 title: About
 permalink: /about/
 # share: true
+# image: '/assets/images/bio-photo.png'
 ---
 
 ## A Southern Girl in the LA World
