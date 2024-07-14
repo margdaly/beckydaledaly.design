@@ -1,0 +1,56 @@
+<!-- Project Section --> 
+{% assign image_files = site.static_files | where: "image", true | where_exp: "file", "file.path contains '/gallery/projects/' and file.path contains project.title" %}
+
+<div class="project-card">
+  <div class="project-images">
+    {% for image in image_files limit:3 %}
+      <div class="project-image-container">
+        <img src="{{ image.url }}" alt="{{ image.alt }}">
+        <p class="image-description">{{ image.description }}</p>
+      </div>
+    {% endfor %}
+  </div>
+  <h2 class="project-title">{{ project.title }}</h2>
+  <p class="project-excerpt">{{ project.description }}</p>
+  <a href="{{ project.url }}" class="btn">See More</a>
+</div>
+
+<style>
+  .project-card {
+    border: 1px solid #000;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  .project-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .project-image-container {
+    border: 1px solid #000;
+  }
+  .project-image-container img {
+    width: 100%;
+    height: auto;
+  }
+  .image-description {
+    font-size: 0.8em;
+    margin-top: 5px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .project-images {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
