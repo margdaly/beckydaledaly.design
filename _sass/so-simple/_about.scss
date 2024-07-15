@@ -2,19 +2,29 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: space-between; /* Added to space elements */
+  justify-content: space-between; 
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
 }
 
+// .bio-avatar-container {
+//   display: flex;
+//   flex-wrap: wrap;
+//   align-items: flex-start;
+//   justify-content: space-between; 
+//   max-width: 50%; 
+//   margin: 0 auto;
+//   padding: 20px;
+// }
+
 .avatar-container {
   flex: 1;
-  min-width: 200px;
-  max-width: 300px;
+  min-width: 100px;
+  max-width: 200px;
   margin-left: auto; 
   margin-right: 0;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .avatar {
@@ -24,13 +34,26 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+.avatar-container img {
+  float: right;
+  display: block;
+}
+
 .bio-container {
   flex: 2;
   min-width: 300px;
 }
 
-h1 {
-  @include fluid-type($min-vw, $max-vw, $h1-min, $h1-max);
+.about-title {
+  h1 {
+    @include fluid-type($min-vw, $max-vw, $about-name-min, $about-name-max);
+    text-align: center;
+  }
+
+  p {
+    @include fluid-type($min-vw, $max-vw, 16px, 20px);
+    text-align: center;
+  }
 }
 
 .about-name {
@@ -40,6 +63,16 @@ h1 {
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;
+  }
+
+  .about-title {
+    h1 {
+      text-align: left;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
   }
 
   .avatar-container {
