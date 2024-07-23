@@ -41,27 +41,36 @@ plugins:
 
 # Front Matter Defaults
 defaults:
-  # projects defaults
   - scope:
-      path: "_projects"
+      path: ""
       type: projects
     values:
-      layout: project
+      layout: "project"
+      image_path: "/assets/images/projects"
       # share: true
-      image_file: true
-      # output: true
+      # image_gallery: true
 
   # images defaults
   - scope:
-      path: "assets/images/gallery"
+      path: "assets/images/projects"
     values:
       image: true
 
 # Collections
-collections: 
+collections:
   projects:
     output: true
-
+    permalink: /projects/:name/
+    order:
+      - brentwood.md
+      - westchester.md
+      - oasis.md
+      - white-marble.md
+      - coastal.md
+      - loft-apartment.md
+      - golf-resort.md
+      - stage-prep.md
+      - manhattan-beach.md
 
 # Site Author
 author:
@@ -81,9 +90,6 @@ author:
       url: "https://www.facebook.com/beckydaledaly/"
     - label: "Website"
       icon: "/assets/images/favicon.ico"
-
-
-
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
