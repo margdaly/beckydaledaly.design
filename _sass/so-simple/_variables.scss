@@ -39,8 +39,8 @@ $h6-min: ($base-font-size / $modular-scale-1) !default;
 $h6-max: ($base-font-size / $modular-scale-2) !default;
 
 /* Title */
-$title-min: $h1-min * 1.6; 
-$title-max: $h1-max * 1.6; 
+$title-min: $h1-min * 1.2; 
+$title-max: $h1-max * 1.2; 
 
 /* Description */
 $description-min: $h4-min * 1.2; 
@@ -100,8 +100,8 @@ $main-max-width: $medium !default;
 $main-sidebar-max-width: $large !default;
 
 /* Site logo */
-$site-logo-width: 150px !default;
-$site-logo-height: 150px !default;
+$site-logo-width: 100px !default;
+$site-logo-height: 100px !default;
 
 /* Border radius */
 $border-radius: 0.25rem !default;
