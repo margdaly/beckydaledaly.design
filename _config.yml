@@ -27,7 +27,7 @@ defaults:
       path: ""
       type: projects
     values:
-      layout: "gallery"
+      layout: "project"
       image_path: "/assets/images/projects"
       # share: true
       # image_gallery: true
