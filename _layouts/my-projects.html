@@ -18,7 +18,7 @@ layout: default
             <a href="{{ project.url | relative_url }}">
               <div class="project-header">
                 <h2 class="project-title">{{ project.title }}</h2>
-                <h3 class="project-subtitle">{{ project.subtitle }}</h3>
+                <h3 class="project-subtitle">* {{ project.subtitle }} *</h3>
               </div>
               <div class="project-image">
                 <img src="{{ '/assets/images/projects/' | append: project.slug | append: '/main.jpg' | relative_url }}" alt="{{ project.title }}">
