@@ -1,16 +1,17 @@
 <!-- Project Section --> 
-{% assign image_files = site.static_files | where: "image", true | where_exp: "file", "file.path contains '/gallery/projects/' and file.path contains project.title" %}
+{% assign image_files = site.static_files | where: "image", true | where_exp: "file", "file.path contains '/projects/' and file.path contains project.title" %}
 
 <div class="project-card">
   <div class="project-images">
     {% for image in image_files limit:3 %}
       <div class="project-image-container">
-        <img src="{{ image.url }}" alt="{{ image.alt }}">
+        <img src="/assets/images/projects/{{ project.slug }}/main.jpg" alt="{{ project.title }}">
         <p class="image-description">{{ image.description }}</p>
       </div>
     {% endfor %}
   </div>
   <h2 class="project-title">{{ project.title }}</h2>
+  <img src="/assets/images/projects/{{ project.slug }}/main.jpg" alt="{{ project.title }}">
   <p class="project-excerpt">{{ project.description }}</p>
   <a href="{{ project.url }}" class="btn">See More</a>
 </div>
