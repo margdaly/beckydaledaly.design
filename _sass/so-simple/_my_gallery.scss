@@ -1,0 +1,30 @@
+@import "so-simple/variables";
+@import "so-simple/mixins";
+@import "so-simple/entries";
+
+.my_gallery {
+  .entry-title {
+    text-align: center;
+  }
+  
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .gallery-item {
+    margin: 0 0 1em;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .gallery-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
