@@ -4,7 +4,9 @@ layout: default
 
 <div class="page-wrapper">
   <div class="main-content">
-    <!-- <h1>{{ page.title }}</h1> -->
+    <div class="about-title">
+      <h1 id="page-title" class="page-title">{{ page.title }}</h1>
+    </div>
       {{ content }}
     <div class="project-grid">
       {% for project in site.projects %}
