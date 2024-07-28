@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<main id="main" class="main-content" aria-label="Content">
+  <article>
+    <div class="page-wrapper">
+      <header class="page-header">
+          {% assign title = page.title %}
+        <div class="about-title">
+          <h1 id="page-title" class="page-title">{{ title }}</h1>
+        </div>
+      </header>
+      
+      <div class="project-grid">
+        {% for project in site.projects %}
+          <div class="project-item">
+            <a href="{{ project.url | relative_url }}">
+              <div class="project-image">
+                <img src="{{ '/assets/images/projects/' | append: project.slug | append: '/main.jpg' | relative_url }}" alt="{{ project.title }}">
+              </div>
+              <div class="project-info">
+                <h2 class="project-title">{{ project.title }}</h2>
+                <h3 class="project-subtitle">{{ project.subtitle }}</h3>
+              </div>
+              <p class="project-description">{{ project.description | truncate: 100 }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+      
+      {{ content }}
+    </div>
+  </article>
+</main>
+
