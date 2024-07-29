@@ -37,7 +37,9 @@ defaults:
       path: "assets/images/projects"
     values:
       image: true
-
+      
+include:
+  - assets
 # Collections
 collections:
   projects:
