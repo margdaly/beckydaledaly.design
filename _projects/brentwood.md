@@ -1,5 +1,5 @@
 ---
-title: Brentwood Luxury Condominium
+title: Brentwood Condominium
 subtitle: Modern Luxury 
-description: Complete Remodel, sold for 2 million in approxamately one month
+description: Complete Remodel, sold for $2M in approxamately one month
 ---
