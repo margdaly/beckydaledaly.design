@@ -1,5 +1,5 @@
 <!-- Project Section --> 
-{% assign image_files = site.static_files | where: "image", true | where_exp: "file", "file.path contains '/projects/' and file.path contains project.title" %}
+{% assign image_files = site.static_files | where: "image", true | where_exp: "file", "file.path contains '/projects/' and file.path contains project.name" %}
 
 <div class="project-card">
   <div class="project-images">
