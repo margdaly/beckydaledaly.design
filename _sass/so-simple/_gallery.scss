@@ -1,0 +1,32 @@
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 5px;
+  grid-auto-flow: dense;
+}
+
+.gallery-item {
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+// Optional: make some items span 2 columns or rows for variety
+.gallery-item:nth-child(4n) {
+  grid-column: span 2;
+}
+
+.gallery-item:nth-child(8n) {
+  grid-row: span 2;
+}

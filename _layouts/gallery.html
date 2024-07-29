@@ -2,28 +2,44 @@
 layout: default
 ---
 
-<header class="page-header">
-    <h1 id="entry-title" class="entry-title" style="text-align: center;">{{ page.title }}</h1>
-    <h3 id="entry-title" class="entry-title" style="text-align: center; color: #33385ab7">* {{ page.subtitle }} *</h3>
-</header>
-<br>
-<br>
-<br>
-<div class="entry-content" style="text-align: center;">
-  {{ content }}
-</div>
-<main>
-  <div id="my_gallery" class="gallery">
-    {% assign project_images = site.static_files | where_exp: "file", "file.path contains '/assets/images/projects/'" %}
-    {% for image in project_images %}
-      {% if image.path contains page.name %}
+<div class="gallery-container">
+  <header class="page-header">
+      <h1 id="entry-title" class="entry-title" style="text-align: center;">{{ page.title }}</h1>
+      <h3 id="entry-title" class="entry-title" style="text-align: center; color: #33385ab7">* {{ page.subtitle }} *</h3>
+  </header>
+  <br>
+
+  <div class="gallery-grid">
+    {% assign project_path = '/assets/images/projects/' | append: page.project_name | append: '/' %}
+    {% for file in site.static_files %}
+      {% if file.path contains project_path %}
         <div class="gallery-item">
-          <a href="{{ image.path | relative_url }}" data-lightbox="gallery" data-title="{{ image.name }}">
-            <img src="{{ image.path | relative_url }}" alt="{{ image.name }}">
-          </a>
+          <img src="{{ file.path | relative_url }}" 
+               alt="{{ file.name | split: '.' | first }}" 
+               loading="lazy"
+               onload="classifyImage(this)">
         </div>
       {% endif %}
     {% endfor %}
   </div>
-</main>
-<!-- <script src="{{ '/assets/js/gallery.js' | relative_url }}"></script> -->
+</div>
+
+<script>
+function classifyImage(img) {
+  if (img.naturalWidth > img.naturalHeight * 1.5) {
+    img.parentNode.classList.add('landscape');
+    if (img.naturalWidth > img.naturalHeight * 2.5) {
+      img.parentNode.classList.add('panoramic');
+    }
+  } else if (img.naturalHeight > img.naturalWidth * 1.5) {
+    img.parentNode.classList.add('portrait');
+  }
+}
+</script>
+
+<!-- Include the main gallery.js file -->
+<script src="{{ '/assets/js/gallery.js' | relative_url }}"></script>
+
+<div class="entry-content" style="text-align: center;">
+  {{ content }}
+</div>
